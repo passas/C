@@ -3,7 +3,7 @@
 // free
 
 #include "Queue.h"
-// typedef struct queue Queue; 
+// typedef struct queue *Queue; 
 
 typedef struct list {
 	void *data;
@@ -56,7 +56,6 @@ int enqueue_Queue (void *data, Queue *q)
 
 	error = 0;
 	aux = _new_List (data, NULL);
-	
 	if (aux==NULL) {
 		error = 1;
 	}
@@ -77,11 +76,11 @@ int dequeue_Queue (Queue *q, void **x)
 	List aux;
 
 	error = 0;
+
 	if ( isEmpty_Queue (*q) ) {
 		error = 2;
 	}
-	
-	else if ((*q)->first == (*q)->last) {	//1 element left
+	else if ( (*q)->first == (*q)->last ) {	//1 element left
 		aux = (*q)->first;
 
 		aux->next = NULL;
@@ -90,7 +89,6 @@ int dequeue_Queue (Queue *q, void **x)
 
 		init_Queue (q);
 	}
-	
 	else {
 		aux = (*q)->first;
 
