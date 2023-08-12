@@ -22,7 +22,6 @@ static List _new_List (void *data, List l)
 	return aux;
 }
 
-
 void init_Queue (Queue *q)
 {
 	(*q) = NULL;
