@@ -8,5 +8,4 @@ Why not?
 
 Because in practice the second one is imperativeness corret, but because in practice the first one is 'one-shot' correct. That means that the first one can be executed at the same time.
 That is the logic of parallell programming, thinking in ways of action through the beggining state.
-
 Nevertheless, the first one is more inteligible (main criteria: human comprehensible).
