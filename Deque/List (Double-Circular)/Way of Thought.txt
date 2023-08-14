@@ -1,0 +1,10 @@
+Why?
+150. (*d)->next->next->prev = (*d);
+151. (*d)->next = (*d)->next->next;
+
+Why not?
+150. (*d)->next = (*d)->next->next;
+151. (*d)->next->prev = (*d);
+
+Because in practice the second one is imperativeness corret, but because in practice the first one is 'one-shot' correct. That means that the first one can be executed at the same time. That is the logic of parallell programming, thinking in ways of action trough the beggining state.
+Nevertheless, the first one is more inteligible (main criteria: human comprehensible).
