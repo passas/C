@@ -77,8 +77,11 @@ void popping (Stack *s)
 {
 	int *iptr;
 
-	if (pop_Stack (s, (void**)&iptr)==0)
+	if (pop_Stack (s, (void**)&iptr)==0) {
 		printf ("%d\n", (*iptr));
+		free (iptr);
+	}
 	else
 		printf ("No Pop\n");
+	
 }
