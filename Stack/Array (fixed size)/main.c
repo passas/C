@@ -15,7 +15,7 @@ void popping (Stack *s);
 main ()
 {
 	Stack s;
-	new_Stack (3, &s);
+	new_Stack (2, &s);
 
 	init_Stack (&s);
 
@@ -24,7 +24,6 @@ main ()
 	pushing (&s, 1);
 	pushing (&s, 2);
 	pushing (&s, 3);
-	pushing (&s, 4);
 
 	if (isEmpty_Stack (s))
 		printf ("Is Empty\n");
@@ -34,7 +33,6 @@ main ()
 	popping (&s);
 	popping (&s);
 	popping (&s);
-	popping (&s); //4
 
 	emptyness(&s);
 }
