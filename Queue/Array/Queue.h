@@ -1,7 +1,7 @@
 #ifndef QUEUE_H
 #define QUEUE_H
 
-// This module handles a fixed max capacity queue of pointers.
+// This module handles a dynamic queue of pointers.
 // FIFO.
 typedef struct queue *Queue;
 
