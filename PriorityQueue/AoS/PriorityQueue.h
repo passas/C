@@ -31,11 +31,15 @@ typedef struct priority_queue *PriorityQueue;
 /*
 * Enqueue of an element.
 *
+* Theta: log2(N)
+*
 * @ret 0: success 1: memory allocation failed (the queue left unchagend)
 */int enqueue_PriorityQueue (int priority, void *data, PriorityQueue *q);
 
 /*
 * Dequeue of an element.
+*
+* Theta: log2(N)
 *
 * @ret 0: success 2: empty queue
 */int dequeue_PriorityQueue (PriorityQueue *q, void **x);
