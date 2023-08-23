@@ -214,3 +214,25 @@ int remove_HashTable (void *key, HashTable *ht, void **x)
 
 	return error;
 }
+
+void free_HashTable (HashTable *ht)
+{
+	Bucket ant, it;
+
+	for (int i=0; i<(*ht)->size; i++)
+	{
+		ant = NULL;
+		for (it=(*ht)->table[i]; it; it->next)
+		{
+			if (ant)
+			{
+				free (ant);
+				ant = NULL;
+			}
+			ant = it;
+		}
+	}
+
+	free ( (*ht)->table );
+	free (*ht);
+}
