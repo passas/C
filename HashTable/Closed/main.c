@@ -23,7 +23,7 @@ int equals (void *v1, void *v2)
 	int *i1 = (int *) v1;
 	int *i2 = (int *) v2;
 
-	return (*i1) == (*i2);
+	return ((*i1) == (*i2));
 }
 
 void _put (int k, char *data, HashTable *ht);
@@ -35,7 +35,7 @@ main ()
 	HashTable ht;
 	//_put (1, "Ana", &ht);
 	
-	new_HashTable (1, 1, hash, equals, &ht);
+	new_HashTable (4, 6, hash, equals, &ht);
 
 	_put (1, "Ana", &ht);
 	_put (2, "Bob", &ht);
@@ -85,6 +85,7 @@ main ()
 
 	free_HashTable (&ht);
 	//_put (1, "Ana", &ht);
+	/**/
 }
 
 void _put (int k, char *data, HashTable *ht)
@@ -97,7 +98,8 @@ void _put (int k, char *data, HashTable *ht)
 
 	s = strdup (data);
 
-	if (! put_HashTable (i, s, ht) )
+	int error = put_HashTable (i, s, ht);
+	if ( error == 0 || error == -1 )
 		printf ("%d: Put\n", k);
 	else
 		printf ("%d: Not Put\n", k);
