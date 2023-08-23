@@ -76,7 +76,7 @@ main ()
 	{
 		_get (i, ht);
 	}
-
+	
 	putchar ('\n');
 	for (int i=0; i<22; i++)
 	{
@@ -85,10 +85,6 @@ main ()
 
 	free_HashTable (&ht);
 	//_put (1, "Ana", &ht);
-	//_put (2, "Bob", &ht);
-	//_put (3, "Cynthia", &ht);
-	//_put (4, "Dalila", &ht);
-
 }
 
 void _put (int k, char *data, HashTable *ht)
