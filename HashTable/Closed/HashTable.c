@@ -145,7 +145,7 @@ int put_HashTable (void *key, void *data, HashTable *ht)
 	// Update data
 	for (it = (*ht)->table[h]; it; it = it->next)
 	{
-		if ( (*ht)->equals (key, it->key) == 0 )
+		if ( (*ht)->equals (key, it->key) )
 		{
 			it->data = data;
 			error = -1;
@@ -173,7 +173,7 @@ int get_HashTable (void *key, HashTable ht, void **x)
 
 	h = (ht->hash (key)) % ht->capacity;
 
-	for (it=ht->table[h]; it && ht->equals(it->key, key) == 0; it = it->next);
+	for (it=ht->table[h]; it && ! (ht->equals(it->key, key)); it = it->next);
 	if (it)
 	{
 		(*x) = it->data;
