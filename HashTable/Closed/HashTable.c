@@ -87,6 +87,9 @@ static int _dup_HashTable (HashTable *ht)
 				tmp = it;
 			}
 		}
+
+		free ( (*ht)->table );
+		free ( (*ht) );
 		(*ht) = aux;
 	}
 	else
