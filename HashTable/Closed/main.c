@@ -33,7 +33,8 @@ void _remove (int k, HashTable *ht);
 main ()
 {
 	HashTable ht;
-
+	//_put (1, "Ana", &ht);
+	
 	new_HashTable (1, 1, hash, equals, &ht);
 
 	_put (1, "Ana", &ht);
@@ -81,6 +82,13 @@ main ()
 	{
 		_remove (i, &ht);
 	}
+
+	free_HashTable (&ht);
+	//_put (1, "Ana", &ht);
+	//_put (2, "Bob", &ht);
+	//_put (3, "Cynthia", &ht);
+	//_put (4, "Dalila", &ht);
+
 }
 
 void _put (int k, char *data, HashTable *ht)
