@@ -172,7 +172,7 @@ static void _fixLeft (Node *dad)
 
 	if ((*son)->bal == LEFT)
 	{
-		(*t)->bal = (*son)->bal = BAL;
+		(*dad)->bal = (*son)->bal = BAL;
 		_rotateRight (dad);
 	}
 
