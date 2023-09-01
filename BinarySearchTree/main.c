@@ -83,7 +83,7 @@ void _get (int k, BinarySearchTree bst)
 		printf ("Not getted\n");
 }
 
-void _remove (int k, BinarySearchTree *bst)
+/*void _remove (int k, BinarySearchTree *bst)
 {
 	char *s;
 	int *i;
@@ -97,4 +97,4 @@ void _remove (int k, BinarySearchTree *bst)
 	}
 	else
 		printf ("Not Removed\n");
-}
+}*/
