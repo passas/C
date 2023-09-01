@@ -167,7 +167,7 @@ static int _put_BinarySearchTree (void *key, void *data, int (*comparator) (void
 static void _fixLeft (Node *t)
 {
 	Node *son, *grand_son;
-											if (!(*t)->left) return; //DUE REMOVE FIXURES
+											
 	son = &((*t)->left);
 
 	if ((*son)->bal == LEFT)
@@ -177,7 +177,7 @@ static void _fixLeft (Node *t)
 	}
 
 	else
-	{										if (!(*son)->right) return; //DUE REMOVE FIXURES
+	{										
 		grand_son = &((*son)->right);
 
 		if ((*grand_son)->bal == LEFT)
@@ -206,7 +206,7 @@ static void _fixLeft (Node *t)
 static void _fixRight (Node *t)
 {
 	Node *son, *grand_son;
-								if (!(*t)->right) return; //DUE REMOVE FIXURES
+								
 	son = &((*t)->right);
 
 	if ((*son)->bal == RIGHT)
@@ -216,7 +216,7 @@ static void _fixRight (Node *t)
 	}
 
 	else
-	{							if (!(*son)->left) return; //DUE REMOVE FIXURES
+	{							
 		grand_son = &((*son)->left);
 
 		if ((*grand_son)->bal == LEFT)
