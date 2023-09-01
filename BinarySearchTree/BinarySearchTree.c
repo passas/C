@@ -164,16 +164,16 @@ static int _put_BinarySearchTree (void *key, void *data, int (*comparator) (void
 /*pre-order: R1 R2 <R2 >R2 R3 ---------- R3 R1 R2 <R3 >R3
 */static void _rotateLeft (Node *t);
 
-static void _fixLeft (Node *t)
+static void _fixLeft (Node *dad)
 {
 	Node *son, *grand_son;
 											
-	son = &((*t)->left);
+	son = &((*dad)->left);
 
 	if ((*son)->bal == LEFT)
 	{
 		(*t)->bal = (*son)->bal = BAL;
-		_rotateRight (t);
+		_rotateRight (dad);
 	}
 
 	else
@@ -182,37 +182,37 @@ static void _fixLeft (Node *t)
 
 		if ((*grand_son)->bal == LEFT)
 		{
-			(*t)->bal = RIGHT;
+			(*dad)->bal = RIGHT;
 			(*son)->bal = BAL;
 		}
 		else if ((*grand_son)->bal == BAL)
 		{
-			(*t)->bal = BAL;
+			(*dad)->bal = BAL;
 			(*son)->bal = BAL;
 		}
 		else if ((*grand_son)->bal == RIGHT)
 		{
-			(*t)->bal = BAL;
+			(*dad)->bal = BAL;
 			(*son)->bal = LEFT;
 		}
 
 		(*grand_son)->bal = BAL;
 
 		_rotateLeft (son);
-		_rotateRight (t);
+		_rotateRight (dad);
 	}
 }
 
-static void _fixRight (Node *t)
+static void _fixRight (Node *dad)
 {
 	Node *son, *grand_son;
 								
-	son = &((*t)->right);
+	son = &((*dad)->right);
 
 	if ((*son)->bal == RIGHT)
 	{
-		(*t)->bal = (*son)->bal = BAL;
-		_rotateLeft (t);
+		(*dad)->bal = (*son)->bal = BAL;
+		_rotateLeft (dad);
 	}
 
 	else
@@ -221,26 +221,26 @@ static void _fixRight (Node *t)
 
 		if ((*grand_son)->bal == LEFT)
 		{
-			(*t)->bal = BAL;
+			(*dad)->bal = BAL;
 			(*son)->bal = RIGHT;
 		}
 
 		else if ((*grand_son)->bal == BAL)
 		{
-			(*t)->bal = BAL;
+			(*dad)->bal = BAL;
 			(*son)->bal = BAL;
 		}
 
 		else if ((*grand_son)->bal == RIGHT)
 		{
-			(*t)->bal = LEFT;
+			(*dad)->bal = LEFT;
 			(*son)->bal = BAL;
 		}
 
 		(*grand_son)->bal = BAL;
 
 		_rotateRight (son);
-		_rotateLeft (t);
+		_rotateLeft (dad);
 	}
 }
 
