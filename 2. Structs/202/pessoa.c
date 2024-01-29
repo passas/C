@@ -2,7 +2,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "Pessoa.h"
+//Assinaturas da API inerente à entidade Pessoa 
+#include "pessoa.h"
 
 
 main ()
