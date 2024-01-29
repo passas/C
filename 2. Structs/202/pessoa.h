@@ -6,7 +6,7 @@ typedef struct pessoa
 {
 	int id;
 	char *nome;
-}Pessoa;
+} *Pessoa;
 
 
 #endif
