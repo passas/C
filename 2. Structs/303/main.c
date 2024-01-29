@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 //Headers relativos à entidade pessoa
-#include "Pessoa.h"
+#include "pessoa.h"
 
 
 main ()
